@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import Colors from "@/constants/Colors";
+import { useLocalSearchParams } from "expo-router";
 
 const ProductDetailsScreen = () => {
+  const { id } = useLocalSearchParams();
   return (
     <View>
-      <Text style={styles.text}>ProductDetailsScreen</Text>
+      <Text style={styles.text}>ProductDetailsScreen {id}</Text>
     </View>
   );
 };
@@ -13,7 +15,7 @@ const ProductDetailsScreen = () => {
 export default ProductDetailsScreen;
 
 const styles = StyleSheet.create({
-  text:{
-    color: Colors.dark.text
-  }
+  text: {
+    color: Colors.dark.text,
+  },
 });
